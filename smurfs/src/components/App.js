@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import { connect } from 'react-redux';
+import SmurfList from './SmurfList';
 
 class App extends Component {
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
         <div>Welcome to your state management version of Smurfs!</div>
         <div>{this.props.title}</div>
         <div>Have fun!</div>
+        <SmurfList/>
       </div>
     );
   }

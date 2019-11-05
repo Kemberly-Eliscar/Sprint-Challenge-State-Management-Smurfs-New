@@ -12,10 +12,9 @@ export const POST_SMURFS_DATA_ERROR = 'POST_SMURFS_DATA_ERROR'
     return dispatch => {
         dispatch({ type: POST_SMURFS_DATA_START, payload : values})
         axios
-            post('http://localhost:3333/smurfs', values)
+            .post('http://localhost:3333/smurfs', values)
             .then( res => {
-                console.log(res)
-                dispatch({ type : POST_SMURFS_DATA_SUCCESS, payload: res})
+                dispatch({ type : POST_SMURFS_DATA_SUCCESS, payload: values })
             })
             .catch( err => {
                 dispatch({ type : POST_SMURFS_DATA_ERROR, payload: err.response })
@@ -36,4 +35,4 @@ export const getData = () => {
                 dispatch({ type : FETCH_SMURFS_DATA_ERROR, payload: err.response})
             })
     }
-} 
+}

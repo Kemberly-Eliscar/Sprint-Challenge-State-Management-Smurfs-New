@@ -38,8 +38,12 @@ const SmurfedFormik = withFormik({
             height: values.height,
             id: Date.now()
         }
-
+        console.log(dataToPost)
         props.props.postData(dataToPost)
+
+        values.name = ''
+        values.age = ''
+        values.height = ''
     }
 }) 
 
